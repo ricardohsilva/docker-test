@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  be:
+    build: ./be
+    container_name: be_container
+    ports:
+      - '3000:3000'
+    volumes:
+      - /be/node_modules
+    stdin_open: true
+    tty: true
+  fe:
+    build: ./fe
+    container_name: fe_container
+    ports:
+      - '8080:8080'
+    volumes:
+      - /fe/node_modules
+    stdin_open: true
+    tty: true
